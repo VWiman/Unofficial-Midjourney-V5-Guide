@@ -85,6 +85,9 @@
                                     <a class="dropdown-item" href="#ar">Aspect Ratios</a>
                                 </li>
                                 <li>
+                                    <a class="dropdown-item" href="#meta">Metadata and EXIF</a>
+                                </li>
+                                <li>
                                     <a class="dropdown-item" href="#banned">Banned Words</a>
                                 </li>
                                 <li>
@@ -112,13 +115,7 @@
         <section>
             <h2>Introduction</h2>
             <p>
-                Welcome to the Midjourney v5 Bot unofficial user guide. This comprehensive guide is designed to help
-                beginners create effective
-                image prompts, producing visually engaging and accurate images that meet their requirements. Explore the
-                intricacies of
-                clarity, format selection, artistic terminology, multi-prompt basics, advanced techniques, and natural
-                language
-                descriptions. To activate v5 on Discord, type “/settings” and select [MJ Version 5].
+            Welcome to the Midjourney v5 Bot unofficial user guide. This comprehensive guide is designed to help beginners create effective image prompts, producing visually engaging and accurate images that meet their requirements. Explore the intricacies of clarity, format selection, artistic terminology, multi-prompt basics, advanced techniques, and natural language descriptions. To activate v5 on Discord, type “/settings” and select [MJ Version 5].
             </p>
         </section>
 
@@ -172,9 +169,7 @@
                 </li>
                 <li>
                     <p>
-                        To create a specific aesthetic, reference at least two elements in the prompt, such as art
-                        movements, media types, art
-                        techniques, artist names, media genres, media titles, time periods, or geographic locations.
+                        To create a specific aesthetic, reference at least two elements in the prompt, such as art movements, media types, art techniques, artist names, media genres, media titles, time periods, or geographic locations.
                     </p>
                 </li>
                 <li>
@@ -318,9 +313,7 @@ To assign a weight, use the format “element::weight” and ensure there is a s
               </li>
                 <li>
                     <p>
-                        If you use a weight such as “book::2” it affects the word before the double colons "::", in this
-                        case “book” and has to
-                        be followed by a space “ “ before the next word.
+                        If you use a weight such as “book::2” it affects the word before the double colons "::", in this case “book” and has to be followed by a space “ “ before the next word.
                     </p>
                 </li>
                 <li>
@@ -335,10 +328,7 @@ To assign a weight, use the format “element::weight” and ensure there is a s
                 </li>
                 <li>
                     <p>
-                        Use negative weights to remove unwanted elements or aspects and avoid using natural language to
-                        describe negative
-                        elements. This means that words like “not”, “without” or “missing” cannot be used in natural
-                        language to exclude items.
+                        Use negative weights to remove unwanted elements or aspects and avoid using natural language to describe negative elements. This means that words like “not”, “without” or “missing” cannot be used in natural language to exclude items.
                     </p>
                 </li>
                 <li>
@@ -468,6 +458,29 @@ To assign a weight, use the format “element::weight” and ensure there is a s
                 <br>
                 <code>A stunning mountain landscape with a crystal-clear lake in the foreground:: real photo --no buildings,
                 vehicles --ar 16:9</code>
+            </p>
+        </section>
+        
+        </section>
+
+        <section id="meta" style="scroll-margin-top: 90px;">
+            <h2>Incorporating Metadata and EXIF Data</h2>
+            <ul>
+                <li>
+                    <p>
+                        Including metadata and EXIF data from photos in the prompts can help generate more accurate and visually engaging images.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Metadata like camera model, ISO, aperture, and shutter speed may enhance the image generation process and improve the results.
+                    </p>
+                </li>
+            </ul>
+            <p class="bg-light rounded p-3 border small">
+                <strong>Example:</strong>
+                <br>
+                <code>Night_out.jpg was taken on August 12, 2005, at 10:30 pm with a Canon PowerShot SD450 digital camera. The image shows two adult happy women in cocktail dresses, standing outside a nightclub in New York City. The camera settings were ISO 400, f/2.8, and 1/30s shutter speed. The image was later edited to adjust the brightness and contrast --ar 4:3</code>
             </p>
         </section>
 
