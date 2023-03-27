@@ -18,601 +18,669 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem;
         }
 
         h2 {
             margin-bottom: 1rem;
+            text-transform: capitalize;
+            
+        }
+        h4 {
+            color: antiquewhite;
         }
 
         section {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         p {
             font-size: large;
         }
+
+        .codeBox {
+            background-color: #4E615E;
+            font-size: larger;
+            font-family: sans-serif;
+            border-style: solid;
+            border-color: rgb(0, 0, 0);
+            border-block: solid #000 2px;
+            border-width: 0.15rem;
+            border-radius: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .codeBoxex {
+            background-color: #4E615E;
+            color:antiquewhite;
+            font-size: large;
+            font-family: sans-serif;
+            border-color: black;
+            border-style: solid;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            border-width: 0.2rem;
+        }
+        .btn-outline-dark {
+            background-color: #4E615E;
+            accent-color: black;
+        }
+
+        code {
+            color: #E3D5BA;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: small;
+            font-variant: normal;
+
+        }
     </style>
 </head>
 
-<body>
-    <div class="container pt-0">
+<body class="p-0 m-0
+">
+    <div class="container-fluid">
+        <div class="dropdown sticky-top">
+            <nav class="navbar justify-content-center navbar-expcol col-smb-4">
+                <button class="btn col-2 btn-outline-dark dropdown-toggle" type="button"
+                    id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu text-center justify-content-center"
+                    aria-labelledby="navbarDropdownMenuLink" style="left: auto; right: auto;">
+                    <li>
+                        <a class="dropdown-item" href="#introduction">Introduction</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#clarity">Clarity and Specificity</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#format">Format and Style</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#style">Stylization<a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#techniques">Terms and Techniques</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#multi">Multi-Prompt</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#weights">Elements with Weights</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#no">The --no Parameter<a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#nld">Natural Language</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#ar">Aspect Ratios</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#meta">Metadata and EXIF</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#banned">Banned Words</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#combine">Combining Prompt with Parameters</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#summary">Summary</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#inspiration">Inspiration</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#disclaimer">Disclaimer</a>
+                    </li>
+                    <!-- Add more <li> elements for other sections -->
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <h1 id="introduction" style="scroll-margin-top: 60px;" class="col-12 mb-4">Creating Effective Image
+                Prompts for
+                Midjourney Bot V5</h1>
+            <section>
+                <hr>
+                <h2>Introduction</h2>
+                <p>
+                    Welcome to the Midjourney v5 Bot unofficial user guide. This comprehensive guide is designed to help
+                    beginners create effective image prompts, producing visually engaging and accurate images that meet
+                    their requirements. Explore the intricacies of clarity, format selection, artistic terminology,
+                    multi-prompt basics, advanced techniques, and natural language descriptions. To activate v5 on
+                    Discord,
+                    type “/settings” and select [MJ Version 5].
+                </p>
+            </section>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 sticky-top rounded-bottom border">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Midjourney Bot V5</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Sections
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li>
-                                    <a class="dropdown-item" href="#introduction">Introduction</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#clarity">Clarity and Specificity</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#format">Format and Style</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#style">Stylization<a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#techniques">Terms and Techniques</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#multi">Multi-Prompt</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#weights">Elements with Weights</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#no">The --no Parameter<a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#nld">Natural Language</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#ar">Aspect Ratios</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#meta">Metadata and EXIF</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#banned">Banned Words</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#combine">Combining Prompt with Parameters</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#summary">Summary</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#inspiration">Inspiration</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#disclaimer">Disclaimer</a>
-                                </li>
-                                <!-- Add more <li> elements for other sections -->
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
 
-        <h1 id="introduction" style="scroll-margin-top: 90px;" class="mb-4">Creating Effective Image Prompts for
-            Midjourney Bot V5</h1>
-        <section>
-            <h2>Introduction</h2>
-            <p>
-                Welcome to the Midjourney v5 Bot unofficial user guide. This comprehensive guide is designed to help
-                beginners create effective image prompts, producing visually engaging and accurate images that meet
-                their requirements. Explore the intricacies of clarity, format selection, artistic terminology,
-                multi-prompt basics, advanced techniques, and natural language descriptions. To activate v5 on Discord,
-                type “/settings” and select [MJ Version 5].
-            </p>
-        </section>
+            <img src="img/mid_art_top.png" alt="" class="img-fluid">
 
-        <section id="clarity" style="scroll-margin-top: 90px;">
-            <h2>Clarity and Specificity</h2>
-            <ul>
-                <li>
-                    <p>
-                        For optimal results, provide a detailed and precise description of the scene, object, or
-                        character.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Include crucial aspects like setting, key elements, and their relationships, which enables
-                        Midjourney v5 to generate
-                        accurate visual representations.</p>
-                </li>
-                <li>
-                    <p>
-                        Keep prompts concise, ideally above 20 words, but always under 60 words.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Use double colons “::” to separate distinct parts of a prompt, such as objects, settings, and
-                        styles.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A tranquil beach at sunset:: Real photo:: Silhouettes of people playing volleyball</code>
-            </p>
-        </section>
+<hr>
 
-        <section id="format" style="scroll-margin-top: 90px;">
-            <h2>Selecting the Ideal Format and Style</h2>
-            <ul>
-                <li>
-                    <p>
-                        Specify your preference for a real photo, illustration, or painting/drawing.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Emphasize this choice in the prompt to ensure the generated image aligns with the desired level
-                        of realism and format.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        To create a specific aesthetic, reference at least two elements in the prompt, such as art
-                        movements, media types, art techniques, artist names, media genres, media titles, time periods,
-                        or geographic locations.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If no specific style is mentioned, the system defaults to photography.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A lush forest with a winding path:: illustration:: style inspired by anime films and Japanese
+            <section id="clarity" style="scroll-margin-top: 60px;">
+                <h2>Clarity and Specificity</h2>
+                <ul>
+                    <li>
+                        <p>
+                            For optimal results, provide a detailed and precise description of the scene, object, or
+                            character.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Include crucial aspects like setting, key elements, and their relationships, which enables
+                            Midjourney v5 to generate
+                            accurate visual representations.</p>
+                    </li>
+                    <li>
+                        <p>
+                            Keep prompts concise, ideally above 20 words, but always under 60 words.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Use double colons “::” to separate distinct parts of a prompt, such as objects, settings,
+                            and
+                            styles.
+                        </p>
+                    </li>
+                </ul>
+                <p class=" codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A tranquil beach at sunset:: Real photo:: Silhouettes of people playing volleyball</code>
+                </p>
+            </section>
+
+            <section id="format" style="scroll-margin-top: 60px;">
+                <h2>Selecting the Ideal Format and Style</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Specify your preference for a real photo, illustration, or painting/drawing.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Emphasize this choice in the prompt to ensure the generated image aligns with the desired
+                            level
+                            of realism and format.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            To create a specific aesthetic, reference at least two elements in the prompt, such as art
+                            movements, media types, art techniques, artist names, media genres, media titles, time
+                            periods,
+                            or geographic locations.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If no specific style is mentioned, the system defaults to photography.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A lush forest with a winding path:: illustration:: style inspired by anime films and Japanese
                 prints</code>
-            </p>
-        </section>
+                </p>
+            </section>
 
-        <section id="style" style="scroll-margin-top: 90px;">
-            <h2>Stylization with the --stylize or --s Parameter</h2>
-            <ul>
-                <li>
-                    <p>
-                        The Midjourney Bot has been trained to produce images that favor artistic color, composition,
-                        and forms.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        The “--stylize” or “--s” parameter influences how strongly this training is applied.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Low stylization values produce images that closely match the prompt but are less artistic (e.g.,
-                        a more true to prompt garden scene). High stylization values create images that are very
-                        artistic but may deviate more from the prompt (e.g., a more creative garden scene, that
-                        resembles a field but is missing the garden).
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        The “--stylize” default value is 100 and accepts integer values from 0 to 1000.
+            <section id="style" style="scroll-margin-top: 60px;">
+                <h2>Stylization with the --stylize or --s Parameter</h2>
+                <ul>
+                    <li>
+                        <p>
+                            The Midjourney Bot has been trained to produce images that favor artistic color,
+                            composition,
+                            and forms.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The “--stylize” or “--s” parameter influences how strongly this training is applied.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Low stylization values produce images that closely match the prompt but are less artistic
+                            (e.g.,
+                            a more true to prompt garden scene). High stylization values create images that are very
+                            artistic but may deviate more from the prompt (e.g., a more creative garden scene, that
+                            resembles a field but is missing the garden).
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The “--stylize” default value is 100 and accepts integer values from 0 to 1000.
 
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        To adjust the stylization level, include “--stylize” or “--s” followed by the desired value in
-                        the prompt, like
-                        “--stylize 500” or “--s 250”.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A colorful flower garden:: bright illustration --s 700</code>
-            </p>
-        </section>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            To adjust the stylization level, include “--stylize” or “--s” followed by the desired value
+                            in
+                            the prompt, like
+                            “--stylize 500” or “--s 250”.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A colorful flower garden:: bright illustration --s 700</code>
+                </p>
+            </section>
 
-        <section id="techniques" style="scroll-margin-top: 90px;">
-            <h2>Artistic Terms and Techniques</h2>
-            <ul>
-                <li>
-                    <p>
-                        Infuse your prompt with relevant artistic terms and techniques specific to photography,
-                        illustration, or art.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Experiment with styles and techniques from various eras to guide Midjourney v5 in creating
-                        unique and captivating images. Including specific artistic terms can result in images with a
-                        more distinct style and time period (e.g., impressionist style inspired by Monet produces an
-                        early 1900s setting).
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        More detail often translates to improved results.
-                    </p>
-                </li>
-                <li>
-                    <p>Focus on only using visual descriptions.</p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>
+            <section id="techniques" style="scroll-margin-top: 60px;">
+                <h2>Artistic Terms and Techniques</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Infuse your prompt with relevant artistic terms and techniques specific to photography,
+                            illustration, or art.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Experiment with styles and techniques from various eras to guide Midjourney v5 in creating
+                            unique and captivating images. Including specific artistic terms can result in images with a
+                            more distinct style and time period (e.g., impressionist style inspired by Monet produces an
+                            early 1900s setting).
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            More detail often translates to improved results.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Focus on only using visual descriptions.</p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>
                     A bustling city street in the rain:: painting:: impressionist style:: inspired by Monet
                 </code>
-            </p>
-        </section>
+                </p>
+            </section>
 
-        <section id="multi" style="scroll-margin-top: 90px;">
-            <h2>Multi-Prompt Fundamentals</h2>
-            <ul>
-                <li>
-                    <p>
-                        Separate distinct parts of a prompt using a double colon “::” followed by a space.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        The double colon "::" followed by a space can be used to separate items, concepts, or
-                        composition.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Do not use a single colon “:” in any circumstance.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Make sure to include all essential elements in the prompt.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>
+            <section id="multi" style="scroll-margin-top: 60px;">
+                <h2>Multi-Prompt Fundamentals</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Separate distinct parts of a prompt using a double colon “::” followed by a space.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The double colon "::" followed by a space can be used to separate items, concepts, or
+                            composition.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Do not use a single colon “:” in any circumstance.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Make sure to include all essential elements in the prompt.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>
                     Racing car:: detailed animated illustration:: cute, whimsical and expressive --no human, animal
                 </code>
-            </p>
-        </section>
+                </p>
+            </section>
 
-        <section id="weights" style="scroll-margin-top: 90px;">
-            <h2>Focus on Essential Elements with Weights</h2>
-            <ul>
-                <li>
-                    <p>
-                        Employ prompt weights to assign importance to specific elements.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Weights are generally useful when you want the bot to focus more on a specific aspect, or when
-                        you want to ensure a
-                        particular element is more or less prominent in the final image.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        To assign a weight, use the format “element::weight” and ensure there is a space " " after the
-                        weight value before the next word.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If you use a weight such as “book::2” it affects the word before the double colons "::", in this
-                        case “book” and has to be followed by a space “ “ before the next word.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Weights can be positive or negative, provided their sum remains positive.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        A prompt like “hot::2 dog” will double the relative weight of “hot”.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Use negative weights to remove unwanted elements or aspects and avoid using natural language to
-                        describe negative elements. This means that words like “not”, “without” or “missing” cannot be
-                        used in natural language to exclude items.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Use “--no” or a negative weight to exclude elements or aspects.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A futuristic cityscape:: illustration:: building::5 futuristic architecture::4 car::-2 traffic::-1 --no pollution, smog</code>
-            </p>
-        </section>
+            <section id="weights" style="scroll-margin-top: 60px;">
+                <h2>Focus on Essential Elements with Weights</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Employ prompt weights to assign importance to specific elements.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Weights are generally useful when you want the bot to focus more on a specific aspect, or
+                            when
+                            you want to ensure a
+                            particular element is more or less prominent in the final image.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            To assign a weight, use the format “element::weight” and ensure there is a space " " after
+                            the
+                            weight value before the next word.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If you use a weight such as “book::2” it affects the word before the double colons "::", in
+                            this
+                            case “book” and has to be followed by a space “ “ before the next word.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Weights can be positive or negative, provided their sum remains positive.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            A prompt like “hot::2 dog” will double the relative weight of “hot”.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Use negative weights to remove unwanted elements or aspects and avoid using natural language
+                            to
+                            describe negative elements. This means that words like “not”, “without” or “missing” cannot
+                            be
+                            used in natural language to exclude items.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Use “--no” or a negative weight to exclude elements or aspects.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A futuristic cityscape:: illustration:: building::5 futuristic architecture::4 car::-2 traffic::-1 --no pollution, smog</code>
+                </p>
+            </section>
 
-        <section id="no" style="scroll-margin-top: 90px;">
-            <h2>The --no Parameter</h2>
-            <ul>
-                <li>
-                    <p>
-                        Use the “--no” parameter to exclude undesired elements from the image.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        The “--no” parameter can be used once and must be placed at the prompt’s end but before “--ar”.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        The "--no" parameter automatically assigns a weight of -0.5 to each excluded item. To assign a
-                        greater negative value to an item, you can instead give it a negative value in the
-                        prompt before the “--no” parameter.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        To exclude multiple elements, separate them with commas, like this: “--no magic, wires, visual
-                        illusion, cropped”
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A peaceful countryside scene:: painting --no cars, buildings, power lines</code>
-            </p>
-        </section>
+            <section id="no" style="scroll-margin-top: 60px;">
+                <h2>The --no Parameter</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Use the “--no” parameter to exclude undesired elements from the image.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The “--no” parameter can be used once and must be placed at the prompt’s end but before
+                            “--ar”.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The "--no" parameter automatically assigns a weight of -0.5 to each excluded item. To assign
+                            a
+                            greater negative value to an item, you can instead give it a negative value in the
+                            prompt before the “--no” parameter.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            To exclude multiple elements, separate them with commas, like this: “--no magic, wires,
+                            visual
+                            illusion, cropped”
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A peaceful countryside scene:: painting --no cars, buildings, power lines</code>
+                </p>
+            </section>
 
-        <section id="nld" style="scroll-margin-top: 90px;">
-            <h2>Natural Language Descriptions</h2>
-            <ul>
-                <li>
-                    <p>
-                        Midjourney v5 understands natural language prompts. Describe the scene as if explaining it to a
-                        friend.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Experiment with different prompting techniques for various scenes, and combine methods for
-                        optimal results.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Starting and ending the prompt with the same or similar words can increase the focus on them.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Starting and ending the prompt with the same or similar words can increase the focus on them.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        While using natural language descriptions, it is often best to separate the image based on
-                        concepts rather than items if
-                        using the “::” parameter.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Natural language should never be used after the “--no” parameter.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A vibrant marketplace full of people shopping for fruits and vegetables during a summer rainstorm::
+            <section id="nld" style="scroll-margin-top: 60px;">
+                <h2>Natural Language Descriptions</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Midjourney v5 understands natural language prompts. Describe the scene as if explaining it
+                            to a
+                            friend.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Experiment with different prompting techniques for various scenes, and combine methods for
+                            optimal results.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Starting and ending the prompt with the same or similar words can increase the focus on
+                            them.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Starting and ending the prompt with the same or similar words can increase the focus on
+                            them.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            While using natural language descriptions, it is often best to separate the image based on
+                            concepts rather than items if
+                            using the “::” parameter.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Natural language should never be used after the “--no” parameter.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A vibrant marketplace full of people shopping for fruits and vegetables during a summer rainstorm::
                 charcoal and pen
                 illustration</code>
-            </p>
-        </section>
+                </p>
+            </section>
 
-        <section id="ar" style="scroll-margin-top: 90px;">
-            <h2>Controlling Aspect Ratios</h2>
-            <ul>
-                <li>
-                    <p>
-                        Aspect ratios govern image proportions and can be adjusted by appending the “--ar” parameter at
-                        the prompt’s end,
-                        following the “--no” parameter.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Define the desired aspect ratio using standard formats like “1:1”, “4:3”, “5:4”, “3:2”, “16:10”,
-                        “16:9”, “2:1”, “21:9”,
-                        “3:1”, “4:5”, or “5:7”.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Choose an aspect ratio that best suits the subject or scene being depicted.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Ensure the “--ar” parameter is placed after the “--no” parameter when used together.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A stunning mountain landscape with a crystal-clear lake in the foreground:: real photo --no buildings,
+            <section id="ar" style="scroll-margin-top: 60px;">
+                <h2>Controlling Aspect Ratios</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Aspect ratios govern image proportions and can be adjusted by appending the “--ar” parameter
+                            at
+                            the prompt’s end,
+                            following the “--no” parameter.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Define the desired aspect ratio using standard formats like “1:1”, “4:3”, “5:4”, “3:2”,
+                            “16:10”,
+                            “16:9”, “2:1”, “21:9”,
+                            “3:1”, “4:5”, or “5:7”.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Choose an aspect ratio that best suits the subject or scene being depicted.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Ensure the “--ar” parameter is placed after the “--no” parameter when used together.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A stunning mountain landscape with a crystal-clear lake in the foreground:: real photo --no buildings,
                 vehicles --ar 16:9</code>
-            </p>
-        </section>
+                </p>
+            </section>
 
-        </section>
+            </section>
 
-        <section id="meta" style="scroll-margin-top: 90px;">
-            <h2>Incorporating Metadata and EXIF Data</h2>
-            <ul>
-                <li>
-                    <p>
-                        Including metadata and EXIF data from photos in the prompts can help generate more accurate and
-                        visually engaging images.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Metadata like camera model, ISO, aperture, and shutter speed may enhance the image generation
-                        process and improve the results.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>Night_out.jpg was taken on August 12, 2005, at 10:30 pm with a Canon PowerShot SD450 digital camera. The image shows two adult happy women in cocktail dresses, standing outside a nightclub in New York City. The camera settings were ISO 400, f/2.8, and 1/30s shutter speed. The image was later edited to adjust the brightness and contrast --ar 4:3</code>
-            </p>
-        </section>
+            <section id="meta" style="scroll-margin-top: 60px;">
+                <h2>Incorporating Metadata and EXIF Data</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Including metadata and EXIF data from photos in the prompts can help generate more accurate
+                            and
+                            visually engaging images.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Metadata like camera model, ISO, aperture, and shutter speed may enhance the image
+                            generation
+                            process and improve the results.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>Night_out.jpg was taken on August 12, 2005, at 10:30 pm with a Canon PowerShot SD450 digital camera. The image shows two adult happy women in cocktail dresses, standing outside a nightclub in New York City. The camera settings were ISO 400, f/2.8, and 1/30s shutter speed. The image was later edited to adjust the brightness and contrast --ar 4:3</code>
+                </p>
+            </section>
 
-        <section id="banned" style="scroll-margin-top: 90px;">
-            <h2>Avoiding Banned Words</h2>
-            <ul>
-                <li>
-                    <p>
-                        Steer clear of banned words, including sexual and gore-related terms. Innocuous words may also
-                        be prohibited, as they could be employed to create inappropriate images. In most cases, common
-                        sense will suffice.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example of words to avoid:</strong>
-                <br>
-                <code>Bum exposed</code>
-            </p>
-        </section>
-        <section id="combine" style="scroll-margin-top: 90px;">
-            <h2>Correctly Combining Parts of the Prompt with Parameters</h2>
-            <ul>
-                <li>
-                    <p>
-                        When incorporating different elements and parameters in the prompt, ensure that double colons
-                        “::” are only used to separate distinct parts of the prompt.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Do not use double colons “::” before or after parameters like “--s”, “--ar” or “--no”.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Parameters should be placed at the end of the prompt, without double colons “::” and separated
-                        by spaces “ “ only.
-                    </p>
-                </li>
-            </ul>
-            <p class="bg-light rounded p-3 border small">
-                <strong>Example:</strong>
-                <br>
-                <code>A vibrant underwater scene with colorful coral and fish:: illustration --s 500 --no sharks, divers</code>
-            </p>
-        </section>
+            <section id="banned" style="scroll-margin-top: 60px;">
+                <h2>Avoiding Banned Words</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Steer clear of banned words, including sexual and gore-related terms. Innocuous words may
+                            also
+                            be prohibited, as they could be employed to create inappropriate images. In most cases,
+                            common
+                            sense will suffice.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example of words to avoid:</strong>
+                    <br>
+                    <code>Bum exposed</code>
+                </p>
+            </section>
+            <section id="combine" style="scroll-margin-top: 60px;">
+                <h2>Correctly Combining Parts of the Prompt with Parameters</h2>
+                <ul>
+                    <li>
+                        <p>
+                            When incorporating different elements and parameters in the prompt, ensure that double
+                            colons
+                            “::” are only used to separate distinct parts of the prompt.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Do not use double colons “::” before or after parameters like “--s”, “--ar” or “--no”.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Parameters should be placed at the end of the prompt, without double colons “::” and
+                            separated
+                            by spaces “ “ only.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A vibrant underwater scene with colorful coral and fish:: illustration --s 500 --no sharks, divers</code>
+                </p>
+            </section>
 
-        <section id="summary" style="scroll-margin-top: 90px;">
-            <h2>Summary</h2>
-            <p>
-                By experimenting with various techniques, formats, artistic terms, and stylization levels, users can
-                optimize their
-                prompts and generate engaging visual content. While Midjourney V5 allows for the use of natural
-                language, it cannot
-                interpret things like smell and sounds other than through the data it has been trained on. All methods
-                explained in this
-                guide can be combined if needed, unless stated otherwise. Revisit the guide often to keep up to date.
-                Always remember to
-                adhere to the guidelines and avoid banned words to ensure a smooth and productive experience with the
-                Midjourney v5 Bot.
-            </p>
-        </section>
+            <section id="summary" style="scroll-margin-top: 60px;">
+                <h2>Summary</h2>
+                <p>
+                    By experimenting with various techniques, formats, artistic terms, and stylization levels, users can
+                    optimize their
+                    prompts and generate engaging visual content. While Midjourney V5 allows for the use of natural
+                    language, it cannot
+                    interpret things like smell and sounds other than through the data it has been trained on. All
+                    methods
+                    explained in this
+                    guide can be combined if needed, unless stated otherwise. Revisit the guide often to keep up to
+                    date.
+                    Always remember to
+                    adhere to the guidelines and avoid banned words to ensure a smooth and productive experience with
+                    the
+                    Midjourney v5 Bot.
+                </p>
+            </section>
 
-        <section id="inspiration" class="container-fluid text-center border pt-2 bg-light rounded"
-            style="scroll-margin-top: 90px;">
-            <h2>Inspiration</h2>
-            <div class="row small">
-                <div class="col-sm border bg-white pt-2 rounded">
-                    <h4>Painting:</h4>
-                    <img class="img-fluid" src="img/mid_Paint.png" alt="Example of result from Painting prompt.">
-                    <code style="font-size: xx-small;">
-                        A serene mountain landscape with a river flowing through the valley, surrounded by blooming wildflowers:: painting in the style of Naive Art:: inspired by 19th-century American landscapes --s 600 --no modern structures, vehicles
+            <section id="inspiration" class="container-fluid text-center" style="scroll-margin-top: 60px;">
+                <h2>Inspiration</h2>
+                <div class="row small">
+                    <div class="col-12 col-sm-5 codeBox m-1">
+                        <h4 class="font-monospace">Painting</h4>
+                        <img class="img-fluid codeBox" src="img/mid_Paint.png"
+                            alt="Example of result from Painting prompt.">
+                        <code class="codebox">
+                        A serene mountain landscape with a river flowing through the valley, sur by blooming wildflowers:: painting in the style of Naive Art:: inspired by 19th-century American landscapes --s 600 --no modern structures, vehicles
                     </code>
-                </div>
-                <div class="col-sm border bg-white pt-2 rounded">
-                    <h4>Photo:</h4>
-                    <img class="img-fluid" src="img/mid_Photo.png" alt="Example of result from Photo prompt.">
-                    <code style="font-size: xx-small;">
+                    </div>
+                    <div class="col-12 col-sm-5 m-1 codeBox">
+                        <h4 class="font-monospace">Photo</h4>
+                        <img class="img-fluid codeBox" src="img/mid_Photo.png"
+                            alt="Example of result from Photo prompt.">
+                        <code class="codebox">
                         Active retro-inspired dance club with industrialist elements in the interior design:: featuring a group of partying females dressed in eclectic outfits::1.5 Polaroid-style photo::1.5 --s 500 --no low resolution, blurry, disfigured, hands, fingers
                     </code>
-                </div>
-                <div class="col-sm border bg-white pt-2 rounded">
-                    <h4>Digital Art:</h4>
-                    <img class="img-fluid" src="img/mid_Digital.png" alt="Example of result from Digital Art prompt.">
-                    <code style="font-size: xx-small;">
+                    </div>
+                    <div class="col-12 col-sm-5 m-1 codeBox">
+                        <h4 class="font-monospace">Digital Art</h4>
+                        <img class="img-fluid codeBox" src="img/mid_Digital.png"
+                            alt="Example of result from Digital Art prompt.">
+                        <code class="codebox">
                         A futuristic city skyline at night, showcasing advanced technology and eco-friendly solutions:: digital illustration:: blending elements of cyberpunk and solarpunk styles --s 450 --no dystopian themes, smog
                     </code>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="pt-5" style="scroll-margin-top: 90px;">
-            <h4 class="small">Disclaimer</h4>
-            <p class="small">
-                This guide is an unofficial resource created to assist users in generating effective image prompts for
-                the
-                Midjourney
-                Bot V5. The author of this guide has no affiliation with Midjourney, Discord, or their respective parent
-                companies and
-                subsidiaries. The content of this guide is not endorsed by Midjourney or Discord, and the views and
-                opinions
-                expressed
-                herein are solely those of the author. Users should refer to the official documentation provided by
-                Midjourney and
-                Discord for the most accurate and up-to-date information.
-            </p>
-            <p class="small">
-                The use of any trademarks, trade names, or logos
-                belonging to Midjourney, Discord, or other third parties on this
-                website is for identification purposes only and does not imply endorsement or affiliation.
-            </p>
-        </section>
+            </section>
+            <hr>
+            <section id="disclaimer" style="scroll-margin-top: 60px; color: #000;">
+                <h5 class="font-monospace small">Disclaimer</h5>
+                <p class="small">
+                    This guide is an unofficial resource created to assist users in generating effective image prompts
+                    for
+                    the
+                    Midjourney
+                    Bot V5. The author of this guide has no affiliation with Midjourney, Discord, or their respective
+                    parent
+                    companies and
+                    subsidiaries. The content of this guide is not endorsed by Midjourney or Discord, and the views and
+                    opinions
+                    expressed
+                    herein are solely those of the author. Users should refer to the official documentation provided by
+                    Midjourney and
+                    Discord for the most accurate and up-to-date information.
+                </p>
+                <p class="small">
+                    The use of any trademarks, trade names, or logos
+                    belonging to Midjourney, Discord, or other third parties on this
+                    website is for identification purposes only and does not imply endorsement or affiliation.
+                </p>
+            </section>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
