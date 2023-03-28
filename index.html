@@ -23,6 +23,7 @@
 
         h1 {
             color: #257A7A;
+            font-weight: bold;
         }
 
 
@@ -33,7 +34,7 @@
         }
 
         h4 {
-            color:#f0efec;
+            color: #f0efec;
         }
 
         section {
@@ -279,7 +280,7 @@
                 </p>
             </section>
 
-        <hr class="new">
+            <hr class="new">
 
             <section id="format" style="scroll-margin-top: 60px;">
                 <h2>Selecting the Ideal Format and Style</h2>
@@ -437,7 +438,7 @@
                 </p>
             </section>
 
-        <hr class="new">
+            <hr class="new">
 
             <section id="weights" style="scroll-margin-top: 60px;">
                 <h2>Focus on Essential Elements with Weights</h2>
@@ -459,16 +460,10 @@
                         <p>
                             To assign a weight, use the format “element::weight” and ensure there is a space " " after
                             the
-                            weight value before the next word.
+                            weight value, before the next word.
                         </p>
                     </li>
-                    <li>
-                        <p>
-                            If you use a weight such as “book::2” it affects the word before the double colons "::", in
-                            this
-                            case “book” and has to be followed by a space “ “ before the next word.
-                        </p>
-                    </li>
+
                     <li>
                         <p>
                             Weights can be positive or negative, provided their sum remains positive.
@@ -476,7 +471,15 @@
                     </li>
                     <li>
                         <p>
-                            A prompt like “hot::2 dog” will double the relative weight of “hot”.
+                            Use negative weights to remove unwanted elements or aspects and avoid using natural language
+                            to describe negative
+                            elements. This means that words like “not”, “without” or “missing” cannot be used in natural
+                            language to exclude items.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            A prompt like “hot::2 dog” will double the weight of “hot”.
                         </p>
                     </li>
                     <li>
@@ -497,11 +500,44 @@
                 <p class="codeBoxex small">
                     <strong>Example:</strong>
                     <br>
-                    <code>A futuristic cityscape:: illustration:: building::5 futuristic architecture::4 car::-2 traffic::-1 --no pollution, smog</code>
+                    <code>Nature, central Stockholm, Sweden, humanity destroyed:: ivy and moss growing through cracks in buildings::4 broken signs
+                    and shattered brown old glass::2 ruined cracked streets::3 mud, dirt covering traditional decaying Swedish
+                    architecture::4 infrastructure::-3 functional cars::-3 ISO 800, f/5.6, 1/200s shutter speed --no order, clean, people,
+                    streetlights --ar 16:9 --s 500</code>
                 </p>
+                <ul>
+                    <li>
+                        <p>
+                            When you want to create a more specific and focused image prompt, you can combine styles,
+                            details, and weights together
+                            to guide the image generation.
+                        </p>
+                    </li>
+                </ul>
+                <p class="codeBoxex small">
+                    <strong>Example:</strong>
+                    <br>
+                    <code>A tree house nestled in the branches of a massive oak tree:: painting in style of graphic novel, detailed and dynamic::4
+                    multiple levels connected by rope bridges and ladders:: wooden exterior with small windows:: the windows are covered by
+                    colorful drapes hinting at a cozy interior:: surrounded by a lush forest canopy --s 400 --ar 3:2</code>
+                </p>
+                <ul>
+
+                    <li>
+                        <p>In the example above, the style and details are combined to create a unique and specific
+                            prompt.
+                            The
+                            weight of "4" has been
+                            assigned to the "painting in the style of a graphic novel, detailed and dynamic" to
+                            emphasize
+                            this aspect. The other
+                            elements are described in natural language and are smoothly integrated into the prompt.
+                    </li>
+                    </p>
+                </ul>
             </section>
 
-        <hr class="new">
+            <hr class="new">
 
             <section id="no" style="scroll-margin-top: 60px;">
                 <h2>The --no Parameter</h2>
@@ -659,7 +695,7 @@
                 </p>
             </section>
 
-        <hr class="new">
+            <hr class="new">
 
             <section id="banned" style="scroll-margin-top: 60px;">
                 <h2>Avoiding Banned Words</h2>
@@ -680,7 +716,7 @@
                     <code>Bare bum exposed</code>
                 </p>
             </section>
-        <hr class="new">
+            <hr class="new">
             <section id="combine" style="scroll-margin-top: 60px;">
                 <h2>Correctly Combining Parts of the Prompt with Parameters</h2>
                 <ul>
@@ -731,7 +767,7 @@
                     Midjourney v5 Bot.
                 </p>
             </section>
-    <hr class="new">
+            <hr class="new">
 
             <section id="inspiration" class="container-fluid text-center" style="scroll-margin-top: 60px;">
                 <h2>Inspiration</h2>
